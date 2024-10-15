@@ -10,12 +10,12 @@ app.use(express.static('static'));
 
 app.use(cors());
 
-let Products = [
-  { productId: 1, name: 'Laptop', price: 50000, quantity: 1 },
-  { productId: 2, name: 'Mobile', price: 12000, quantity: 2 },
-  { productId: 3, name: 'Tablet', price: 35000, quantity: 1 },
-  { productId: 4, name: 'Smart Watch', price: 8000, quantity: 1 },
-];
+// let Products = [
+//   { productId: 1, name: 'Laptop', price: 50000, quantity: 1 },
+//   { productId: 2, name: 'Mobile', price: 12000, quantity: 2 },
+//   { productId: 3, name: 'Tablet', price: 35000, quantity: 1 },
+//   { productId: 4, name: 'Smart Watch', price: 8000, quantity: 1 },
+// ];
 
 function addcartItem(Product, productId, name, price, quantity) {
   Product.push({
@@ -28,11 +28,12 @@ function addcartItem(Product, productId, name, price, quantity) {
 }
 
 app.get('/cart/add', (req, res) => {
+  let result = 0;
   let productId = parseInt(req.query.productId);
   let name = req.query.name;
   let price = parseInt(req.query.price);
   let quantity = parseInt(req.query.quantity);
-  let result = addcartItem(Products, productId, name, price, quantity);
+  result = addcartItem(Products, productId, name, price, quantity);
   res.json({ cartItems: result });
 });
 
