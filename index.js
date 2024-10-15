@@ -56,6 +56,7 @@ app.get('/cart/edit', (req, res) => {
   let productId = parseInt(req.query.productId);
   let quantity = parseInt(req.query.quantity);
   let result = editItemQuantity(Products, productId, quantity);
+  Products = result;
   res.json({ cartItems: result });
 });
 
