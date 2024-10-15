@@ -12,7 +12,9 @@ app.use(cors());
 
 let cart = [
   { productId: 1, name: 'Laptop', price: 50000, quantity: 1 },
-  { productId: 2, name: 'Mobile', price: 20000, quantity: 2 },
+  { productId: 2, name: 'Mobile', price: 12000, quantity: 2 },
+  { productId: 3, name: 'Tablet', price: 35000, quantity: 1 },
+  { productId: 4, name: 'Smart Watch', price: 8000, quantity: 1 },
 ];
 
 function addcartItem(cart, productId, name, price, quantity) {
