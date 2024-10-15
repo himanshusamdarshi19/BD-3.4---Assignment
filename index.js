@@ -4,7 +4,7 @@ const { resolve } = require('path');
 let cors = require('cors');
 
 const app = express();
-const port = 3010;
+const port = 3000;
 
 app.use(express.static('static'));
 
@@ -40,6 +40,10 @@ function editItemQuantity(cart, productId, quantity) {
   for (i = 0; i < cart.length; i++) {
     if (cart[i].productId === productId) {
       cart[i].quantity = quantity;
+      if(quantity === 0)
+      {
+        cart = cart.filter(Item=>Item.quantity!==0)
+      }
     }
   }
   return cart;
