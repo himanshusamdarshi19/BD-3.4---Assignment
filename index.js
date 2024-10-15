@@ -40,10 +40,6 @@ function editItemQuantity(cart, productId, quantity) {
   for (i = 0; i < cart.length; i++) {
     if (cart[i].productId === productId) {
       cart[i].quantity = quantity;
-      if(cart[i].quantity == 0)
-      {
-        cart = cart.filter((item) => item.productId !== cart[i].productId);
-      }
     }
   }
   return cart;
