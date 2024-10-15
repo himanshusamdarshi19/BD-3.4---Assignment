@@ -10,6 +10,7 @@ app.use(express.static('static'));
 
 app.use(cors());
 
+let Products = [];
 // let Products = [
 //   { productId: 1, name: 'Laptop', price: 50000, quantity: 1 },
 //   { productId: 2, name: 'Mobile', price: 12000, quantity: 2 },
